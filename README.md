@@ -9,7 +9,7 @@ Upload an audio or video recording of a meeting and get, a few minutes later:
 
 Processing is slow by nature, so everything after the upload runs as **background jobs** (BullMQ on Redis) split into three stages — `TRANSCRIBE → DIARIZE → SUMMARIZE` — each with its own retries. The dashboard polls for progress, so you can close the tab and come back.
 
-Built on the [Selleo boilerplate](https://github.com/Selleo/boilerplate) (NestJS + Drizzle + Better Auth API, React Router 7 + shadcn/ui web app, pnpm/turbo monorepo).
+Built on the NestJS + Drizzle + Better Auth API, React Router 7 + shadcn/ui web app, pnpm/turbo monorepo.
 
 ---
 
