@@ -1,0 +1,6 @@
+{
+  "name": "reverse-proxy",
+  "scripts": {
+    "dev": "caddy run"
+  }
+}

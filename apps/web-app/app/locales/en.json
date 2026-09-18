@@ -1,0 +1,350 @@
+{
+  "auth": {
+    "headings": {
+      "login": "Welcome back",
+      "register": "Create your account"
+    },
+    "subheadings": {
+      "login": "Login to your MeetNotes account",
+      "register": "Enter your details to get started"
+    },
+    "fields": {
+      "email": {
+        "label": "Email",
+        "placeholder": "m@example.com",
+        "errors": {
+          "invalid": "Invalid email"
+        }
+      },
+      "password": {
+        "label": "Password",
+        "errors": {
+          "minLength": "Password must be at least 8 characters"
+        }
+      },
+      "name": {
+        "label": "Username",
+        "placeholder": "your_username",
+        "errors": {
+          "minLength": "Username must be at least 3 characters"
+        }
+      },
+      "confirmPassword": {
+        "label": "Confirm password",
+        "errors": {
+          "minLength": "Password must be at least 8 characters",
+          "mismatch": "Passwords do not match"
+        }
+      }
+    },
+    "buttons": {
+      "primary": {
+        "login": "Login",
+        "register": "Create account"
+      },
+      "google": "Login with Google",
+      "microsoft": "Login with Microsoft"
+    },
+    "links": {
+      "forgotPassword": "Forgot your password?",
+      "toggle": {
+        "hasAccount": "Already have an account?",
+        "noAccount": "Don't have an account?",
+        "signIn": "Sign in",
+        "signUp": "Sign up"
+      },
+      "agreement": {
+        "prefix": "By clicking continue, you agree to our",
+        "terms": "Terms of Service",
+        "and": "and",
+        "privacy": "Privacy Policy"
+      }
+    },
+    "continueWith": "Or continue with",
+    "toast": {
+      "verified": {
+        "title": "Your email has been verified",
+        "description": "You can now log in to your account"
+      }
+    }
+  },
+  "forgotPassword": {
+    "title": "Odzyskaj dostęp",
+    "description": "Podaj adres email powiązany z Twoim kontem. Jeśli konto istnieje, wyślemy instrukcję resetu hasła.",
+    "fields": {
+      "email": {
+        "label": "Email",
+        "errors": {
+          "invalid": "Nieprawidłowy adres email"
+        }
+      }
+    },
+    "buttons": {
+      "submit": "Wyślij link resetujący",
+      "submitting": "Wysyłanie..."
+    },
+    "links": {
+      "remember": "Pamiętasz hasło?",
+      "backToLogin": "Wróć do logowania"
+    }
+  },
+  "newPassword": {
+    "title": "Ustaw nowe hasło",
+    "description": "Wpisz nowe hasło do konta, aby odzyskać dostęp. Hasło powinno mieć co najmniej 8 znaków.",
+    "fields": {
+      "newPassword": {
+        "label": "Nowe hasło",
+        "errors": {
+          "minLength": "Hasło musi mieć co najmniej 8 znaków"
+        }
+      },
+      "confirmPassword": {
+        "label": "Powtórz hasło",
+        "errors": {
+          "minLength": "Hasło musi mieć co najmniej 8 znaków",
+          "mismatch": "Hasła muszą być takie same"
+        }
+      }
+    },
+    "buttons": {
+      "submit": "Zapisz nowe hasło",
+      "submitting": "Zapisywanie...",
+      "backToForgot": "Wróć do resetu hasła"
+    },
+    "messages": {
+      "invalidLink": "Link do resetu hasła wygasł lub jest nieprawidłowy.",
+      "tokenIssue": "Link resetujący jest nieprawidłowy lub wygasł. Poproś o nowy link.",
+      "backToLoginPrompt": "Wróć do logowania?",
+      "backToLogin": "Zaloguj się"
+    }
+  },
+  "landing": {
+    "meta": {
+      "title": "MeetNotes | AI meeting notes from audio and video",
+      "description": "Upload a meeting recording and get a transcript, speaker breakdown, summary, action items and decisions — processed in the background."
+    },
+    "layout": {
+      "nav": {
+        "product": "Product",
+        "features": "How it works",
+        "pricing": "Self-hosted",
+        "about": "About"
+      },
+      "cta": {
+        "signIn": "Sign in",
+        "dashboard": "Open dashboard"
+      },
+      "footer": {
+        "madeWith": "MeetNotes · AI meeting notes built with NestJS, React Router, Whisper and Claude.",
+        "product": "Product",
+        "features": "How it works",
+        "pricing": "Self-hosted",
+        "about": "About"
+      }
+    },
+    "hero": {
+      "badge": "Whisper + Claude, running in the background",
+      "title": "Turn every meeting recording into notes your team will actually read",
+      "description": "Drop in an audio or video file. MeetNotes transcribes it with Whisper, separates the speakers and asks Claude for a summary, action items and decisions — while you get on with your day.",
+      "primaryCta": "Create your account",
+      "secondaryCta": "Open dashboard",
+      "highlights": {
+        "auth": "Long recordings processed as background jobs",
+        "stack": "Transcript, speakers, summary, actions, decisions"
+      }
+    },
+    "features": {
+      "title": "Three background stages, one page of notes",
+      "description": "Every stage is a separate queue job with retries, so a hiccup in summarisation never re-runs a 40-minute transcription.",
+      "items": {
+        "upload": {
+          "title": "1. Upload",
+          "description": "Drag an MP3, M4A, WAV or MP4 into the dashboard. The file lands in object storage and a job is queued immediately."
+        },
+        "pipeline": {
+          "title": "2. Transcribe & diarize",
+          "description": "Whisper produces timestamped segments; a diarization step labels who said what. Watch progress live on the meeting page."
+        },
+        "aiNotes": {
+          "title": "3. AI notes",
+          "description": "Claude writes the summary, extracts action items with owners and due dates, and records the decisions — each linked back to the transcript."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Self-hosted, your recordings stay yours",
+      "description": "Runs on Postgres, Redis and any S3-compatible bucket. Bring your own Whisper (API or local) and Anthropic key, or use the built-in mock adapters to try the flow without any credentials.",
+      "amount": "$0",
+      "amountNote": "license — pay only your model usage",
+      "additional": "Swap adapters through environment variables: OpenAI Whisper, local whisper CLI, pyannote, Claude or heuristics.",
+      "contactCta": "Get started",
+      "codebaseCta": "Browse the API docs"
+    },
+    "footer": {
+      "renderedAt": "Last rendered at {{date}}"
+    }
+  },
+  "errors": {
+    "actions": {
+      "home": "Go to home page",
+      "dashboard": "Open dashboard",
+      "backToDashboard": "Back to dashboard"
+    },
+    "global": {
+      "code": "Error 404",
+      "title": "We couldn't find that page",
+      "description": "The address may be outdated or the page has been moved."
+    },
+    "dashboard": {
+      "code": "Error 404",
+      "title": "This dashboard page doesn't exist",
+      "description": "Check the URL or go back to the dashboard home."
+    }
+  },
+  "common": {
+    "languages": {
+      "english": "English",
+      "polish": "Polski"
+    }
+  },
+  "dashboard": {
+    "navUser": {
+      "language": "Language",
+      "logout": "Log out"
+    }
+  },
+  "about": {
+    "metaTitle": "About page",
+    "heading": "About page"
+  },
+  "sidebar": {
+    "brand": "MeetNotes",
+    "tagline": "AI meeting notes",
+    "workspace": "Workspace",
+    "meetings": "Meetings",
+    "newRecording": "New recording",
+    "jobs": "Background jobs",
+    "apiDocs": "API docs"
+  },
+  "meetings": {
+    "title": "Meetings",
+    "subtitle": "Upload a recording and let the pipeline transcribe it, split the speakers and summarise it in the background.",
+    "upload": {
+      "title": "New recording",
+      "description": "Audio or video up to {{max}} MB. Processing runs in the background, so you can leave this page.",
+      "dropzone": "Drag a recording here or click to choose a file",
+      "dropzoneHint": "MP3, M4A, WAV, FLAC, OGG, MP4, MOV, WEBM",
+      "titleLabel": "Meeting title",
+      "titlePlaceholder": "e.g. Sprint review 18.09",
+      "languageLabel": "Spoken language",
+      "languageAuto": "Auto-detect",
+      "submit": "Upload and process",
+      "uploading": "Uploading… {{percent}}%",
+      "queued": "Recording queued. Transcription starts in a moment.",
+      "remove": "Remove file",
+      "invalidType": "Please choose an audio or video file.",
+      "tooLarge": "File is larger than {{max}} MB."
+    },
+    "list": {
+      "empty": {
+        "title": "No meetings yet",
+        "description": "Upload your first recording above. Transcripts, summaries, action items and decisions will show up here."
+      },
+      "columns": {
+        "title": "Meeting",
+        "status": "Status",
+        "duration": "Duration",
+        "results": "Results",
+        "created": "Uploaded"
+      },
+      "results": "{{actionItems}} actions · {{decisions}} decisions",
+      "open": "Open",
+      "retry": "Retry",
+      "delete": "Delete",
+      "deleteTitle": "Delete this meeting?",
+      "deleteDescription": "The recording, transcript and notes for “{{title}}” will be removed permanently.",
+      "cancel": "Cancel",
+      "confirmDelete": "Delete",
+      "processing": "{{count}} in progress",
+      "loadError": "Could not load meetings.",
+      "count": "{{count}} meetings"
+    },
+    "status": {
+      "uploaded": "Queued",
+      "transcribing": "Transcribing",
+      "diarizing": "Identifying speakers",
+      "summarizing": "Summarising",
+      "completed": "Completed",
+      "failed": "Failed"
+    },
+    "stages": {
+      "upload": "Upload",
+      "transcribe": "Transcription (Whisper)",
+      "diarize": "Speaker diarization",
+      "summarize": "AI summary"
+    },
+    "timeline": {
+      "title": "Processing",
+      "description": "Each step is a separate background job with automatic retries. This page refreshes itself.",
+      "failedAt": "Failed at step: {{stage}}",
+      "retry": "Retry from this step",
+      "retrying": "Retrying…"
+    },
+    "details": {
+      "back": "Back to meetings",
+      "rename": "Rename",
+      "export": "Export Markdown",
+      "exporting": "Exporting…",
+      "delete": "Delete",
+      "uploadedOn": "Uploaded {{date}}",
+      "duration": "Duration",
+      "speakers": "Speakers",
+      "language": "Language",
+      "file": "File",
+      "notFound": "Meeting not found.",
+      "loadError": "Could not load this meeting.",
+      "renameTitle": "Rename meeting",
+      "renameLabel": "Title",
+      "save": "Save",
+      "saving": "Saving…",
+      "notReady": "Notes will appear here once processing has finished.",
+      "unknown": "unknown"
+    },
+    "tabs": {
+      "summary": "Summary",
+      "actionItems": "Action items",
+      "decisions": "Decisions",
+      "transcript": "Transcript"
+    },
+    "summary": {
+      "keyTopics": "Key topics",
+      "empty": "No summary yet."
+    },
+    "actionItems": {
+      "empty": "No action items were detected.",
+      "owner": "Owner",
+      "due": "Due",
+      "unassigned": "Unassigned",
+      "priority": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "source": "Show in transcript"
+    },
+    "decisions": {
+      "empty": "No decisions were detected.",
+      "source": "Show in transcript"
+    },
+    "transcript": {
+      "empty": "Transcript is not available yet.",
+      "renameSpeaker": "Rename speaker",
+      "speakerName": "Display name",
+      "speakerHint": "Used in the notes, action item owners and the Markdown export.",
+      "segments": "{{count}} segments"
+    },
+    "player": {
+      "unavailable": "Media preview is unavailable."
+    }
+  }
+}

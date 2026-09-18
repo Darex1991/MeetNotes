@@ -1,0 +1,350 @@
+{
+  "auth": {
+    "headings": {
+      "login": "Witaj ponownie",
+      "register": "Utwórz konto"
+    },
+    "subheadings": {
+      "login": "Zaloguj się do konta MeetNotes",
+      "register": "Wpisz swoje dane, aby zacząć"
+    },
+    "fields": {
+      "email": {
+        "label": "E-mail",
+        "placeholder": "m@example.com",
+        "errors": {
+          "invalid": "Nieprawidłowy adres e-mail"
+        }
+      },
+      "password": {
+        "label": "Hasło",
+        "errors": {
+          "minLength": "Hasło musi mieć co najmniej 8 znaków"
+        }
+      },
+      "name": {
+        "label": "Nazwa użytkownika",
+        "placeholder": "twoja_nazwa",
+        "errors": {
+          "minLength": "Nazwa użytkownika musi mieć co najmniej 3 znaki"
+        }
+      },
+      "confirmPassword": {
+        "label": "Potwierdź hasło",
+        "errors": {
+          "minLength": "Hasło musi mieć co najmniej 8 znaków",
+          "mismatch": "Hasła nie są takie same"
+        }
+      }
+    },
+    "buttons": {
+      "primary": {
+        "login": "Zaloguj się",
+        "register": "Utwórz konto"
+      },
+      "google": "Zaloguj przez Google",
+      "microsoft": "Zaloguj przez Microsoft"
+    },
+    "links": {
+      "forgotPassword": "Nie pamiętasz hasła?",
+      "toggle": {
+        "hasAccount": "Masz już konto?",
+        "noAccount": "Nie masz konta?",
+        "signIn": "Zaloguj się",
+        "signUp": "Zarejestruj się"
+      },
+      "agreement": {
+        "prefix": "Klikając kontynuuj, akceptujesz nasze",
+        "terms": "Warunki korzystania",
+        "and": "oraz",
+        "privacy": "Politykę prywatności"
+      }
+    },
+    "continueWith": "Lub kontynuuj przez",
+    "toast": {
+      "verified": {
+        "title": "Twój e-mail został zweryfikowany",
+        "description": "Możesz teraz zalogować się do swojego konta"
+      }
+    }
+  },
+  "forgotPassword": {
+    "title": "Odzyskaj dostęp",
+    "description": "Podaj adres email powiązany z Twoim kontem. Jeśli konto istnieje, wyślemy instrukcję resetu hasła.",
+    "fields": {
+      "email": {
+        "label": "Email",
+        "errors": {
+          "invalid": "Nieprawidłowy adres email"
+        }
+      }
+    },
+    "buttons": {
+      "submit": "Wyślij link resetujący",
+      "submitting": "Wysyłanie..."
+    },
+    "links": {
+      "remember": "Pamiętasz hasło?",
+      "backToLogin": "Wróć do logowania"
+    }
+  },
+  "newPassword": {
+    "title": "Ustaw nowe hasło",
+    "description": "Wpisz nowe hasło do konta, aby odzyskać dostęp. Hasło powinno mieć co najmniej 8 znaków.",
+    "fields": {
+      "newPassword": {
+        "label": "Nowe hasło",
+        "errors": {
+          "minLength": "Hasło musi mieć co najmniej 8 znaków"
+        }
+      },
+      "confirmPassword": {
+        "label": "Powtórz hasło",
+        "errors": {
+          "minLength": "Hasło musi mieć co najmniej 8 znaków",
+          "mismatch": "Hasła muszą być takie same"
+        }
+      }
+    },
+    "buttons": {
+      "submit": "Zapisz nowe hasło",
+      "submitting": "Zapisywanie...",
+      "backToForgot": "Wróć do resetu hasła"
+    },
+    "messages": {
+      "invalidLink": "Link do resetu hasła wygasł lub jest nieprawidłowy.",
+      "tokenIssue": "Link resetujący jest nieprawidłowy lub wygasł. Poproś o nowy link.",
+      "backToLoginPrompt": "Wróć do logowania?",
+      "backToLogin": "Zaloguj się"
+    }
+  },
+  "landing": {
+    "meta": {
+      "title": "MeetNotes | Notatki ze spotkań z audio i wideo",
+      "description": "Wgraj nagranie spotkania i otrzymaj transkrypcję, podział na mówców, streszczenie, action items i decyzje — przetwarzane w tle."
+    },
+    "layout": {
+      "nav": {
+        "product": "Produkt",
+        "features": "Jak to działa",
+        "pricing": "Self-hosted",
+        "about": "O nas"
+      },
+      "cta": {
+        "signIn": "Zaloguj się",
+        "dashboard": "Otwórz panel"
+      },
+      "footer": {
+        "madeWith": "MeetNotes · notatki ze spotkań AI zbudowane na NestJS, React Router, Whisper i Claude.",
+        "product": "Produkt",
+        "features": "Jak to działa",
+        "pricing": "Self-hosted",
+        "about": "O nas"
+      }
+    },
+    "hero": {
+      "badge": "Whisper + Claude, przetwarzanie w tle",
+      "title": "Zamień każde nagranie ze spotkania w notatki, które zespół naprawdę przeczyta",
+      "description": "Wrzuć plik audio lub wideo. MeetNotes transkrybuje go Whisperem, rozdziela mówców i prosi Claude o streszczenie, action items i decyzje — a Ty w tym czasie robisz swoje.",
+      "primaryCta": "Utwórz konto",
+      "secondaryCta": "Otwórz panel",
+      "highlights": {
+        "auth": "Długie nagrania jako zadania w tle",
+        "stack": "Transkrypcja, mówcy, streszczenie, akcje, decyzje"
+      }
+    },
+    "features": {
+      "title": "Trzy etapy w tle, jedna strona notatek",
+      "description": "Każdy etap to osobne zadanie w kolejce z powtórzeniami, więc błąd w streszczeniu nigdy nie uruchamia ponownie 40-minutowej transkrypcji.",
+      "items": {
+        "upload": {
+          "title": "1. Upload",
+          "description": "Przeciągnij MP3, M4A, WAV lub MP4 do panelu. Plik trafia do object storage, a zadanie natychmiast ląduje w kolejce."
+        },
+        "pipeline": {
+          "title": "2. Transkrypcja i diaryzacja",
+          "description": "Whisper tworzy segmenty z czasem, a krok diaryzacji oznacza, kto co powiedział. Postęp śledzisz na żywo na stronie spotkania."
+        },
+        "aiNotes": {
+          "title": "3. Notatki AI",
+          "description": "Claude pisze streszczenie, wyciąga action items z właścicielami i terminami oraz zapisuje decyzje — każdą z odniesieniem do transkrypcji."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Self-hosted — nagrania zostają u Ciebie",
+      "description": "Działa na Postgresie, Redisie i dowolnym bucketcie zgodnym z S3. Użyj własnego Whispera (API lub lokalnie) i klucza Anthropic albo wbudowanych adapterów mock, by sprawdzić przepływ bez żadnych poświadczeń.",
+      "amount": "0 zł",
+      "amountNote": "za licencję — płacisz tylko za użycie modeli",
+      "additional": "Adaptery przełączasz zmiennymi środowiskowymi: OpenAI Whisper, lokalne CLI whisper, pyannote, Claude lub heurystyki.",
+      "contactCta": "Zaczynamy",
+      "codebaseCta": "Dokumentacja API"
+    },
+    "footer": {
+      "renderedAt": "Ostatnio wyrenderowano: {{date}}"
+    }
+  },
+  "errors": {
+    "actions": {
+      "home": "Przejdź na stronę główną",
+      "dashboard": "Otwórz panel",
+      "backToDashboard": "Wróć do panelu"
+    },
+    "global": {
+      "code": "Błąd 404",
+      "title": "Nie znaleźliśmy tej strony",
+      "description": "Adres może być nieaktualny albo strona została przeniesiona."
+    },
+    "dashboard": {
+      "code": "Błąd 404",
+      "title": "Ta strona panelu nie istnieje",
+      "description": "Sprawdź adres URL lub wróć do strony głównej panelu."
+    }
+  },
+  "common": {
+    "languages": {
+      "english": "English",
+      "polish": "Polski"
+    }
+  },
+  "dashboard": {
+    "navUser": {
+      "language": "Język",
+      "logout": "Wyloguj się"
+    }
+  },
+  "about": {
+    "metaTitle": "Strona o nas",
+    "heading": "Strona o nas"
+  },
+  "sidebar": {
+    "brand": "MeetNotes",
+    "tagline": "Notatki ze spotkań AI",
+    "workspace": "Przestrzeń",
+    "meetings": "Spotkania",
+    "newRecording": "Nowe nagranie",
+    "jobs": "Zadania w tle",
+    "apiDocs": "Dokumentacja API"
+  },
+  "meetings": {
+    "title": "Spotkania",
+    "subtitle": "Wgraj nagranie, a pipeline w tle zrobi transkrypcję, rozdzieli mówców i przygotuje streszczenie.",
+    "upload": {
+      "title": "Nowe nagranie",
+      "description": "Audio lub wideo do {{max}} MB. Przetwarzanie działa w tle — możesz opuścić tę stronę.",
+      "dropzone": "Przeciągnij nagranie tutaj lub kliknij, aby wybrać plik",
+      "dropzoneHint": "MP3, M4A, WAV, FLAC, OGG, MP4, MOV, WEBM",
+      "titleLabel": "Tytuł spotkania",
+      "titlePlaceholder": "np. Sprint review 18.09",
+      "languageLabel": "Język nagrania",
+      "languageAuto": "Wykryj automatycznie",
+      "submit": "Wgraj i przetwórz",
+      "uploading": "Wysyłanie… {{percent}}%",
+      "queued": "Nagranie w kolejce. Transkrypcja zaraz ruszy.",
+      "remove": "Usuń plik",
+      "invalidType": "Wybierz plik audio lub wideo.",
+      "tooLarge": "Plik jest większy niż {{max}} MB."
+    },
+    "list": {
+      "empty": {
+        "title": "Brak spotkań",
+        "description": "Wgraj pierwsze nagranie powyżej. Transkrypcje, streszczenia, action items i decyzje pojawią się tutaj."
+      },
+      "columns": {
+        "title": "Spotkanie",
+        "status": "Status",
+        "duration": "Czas",
+        "results": "Wyniki",
+        "created": "Wgrano"
+      },
+      "results": "{{actionItems}} akcji · {{decisions}} decyzji",
+      "open": "Otwórz",
+      "retry": "Powtórz",
+      "delete": "Usuń",
+      "deleteTitle": "Usunąć to spotkanie?",
+      "deleteDescription": "Nagranie, transkrypcja i notatki dla „{{title}}” zostaną trwale usunięte.",
+      "cancel": "Anuluj",
+      "confirmDelete": "Usuń",
+      "processing": "{{count}} w trakcie",
+      "loadError": "Nie udało się pobrać spotkań.",
+      "count": "{{count}} spotkań"
+    },
+    "status": {
+      "uploaded": "W kolejce",
+      "transcribing": "Transkrypcja",
+      "diarizing": "Rozpoznawanie mówców",
+      "summarizing": "Streszczanie",
+      "completed": "Gotowe",
+      "failed": "Błąd"
+    },
+    "stages": {
+      "upload": "Upload",
+      "transcribe": "Transkrypcja (Whisper)",
+      "diarize": "Diaryzacja mówców",
+      "summarize": "Streszczenie AI"
+    },
+    "timeline": {
+      "title": "Przetwarzanie",
+      "description": "Każdy krok to osobne zadanie w tle z automatycznymi powtórzeniami. Strona odświeża się sama.",
+      "failedAt": "Błąd na etapie: {{stage}}",
+      "retry": "Powtórz od tego etapu",
+      "retrying": "Powtarzanie…"
+    },
+    "details": {
+      "back": "Wróć do spotkań",
+      "rename": "Zmień nazwę",
+      "export": "Eksportuj Markdown",
+      "exporting": "Eksportowanie…",
+      "delete": "Usuń",
+      "uploadedOn": "Wgrano {{date}}",
+      "duration": "Czas trwania",
+      "speakers": "Mówcy",
+      "language": "Język",
+      "file": "Plik",
+      "notFound": "Nie znaleziono spotkania.",
+      "loadError": "Nie udało się wczytać spotkania.",
+      "renameTitle": "Zmień nazwę spotkania",
+      "renameLabel": "Tytuł",
+      "save": "Zapisz",
+      "saving": "Zapisywanie…",
+      "notReady": "Notatki pojawią się tutaj po zakończeniu przetwarzania.",
+      "unknown": "nieznany"
+    },
+    "tabs": {
+      "summary": "Streszczenie",
+      "actionItems": "Action items",
+      "decisions": "Decyzje",
+      "transcript": "Transkrypcja"
+    },
+    "summary": {
+      "keyTopics": "Główne tematy",
+      "empty": "Brak streszczenia."
+    },
+    "actionItems": {
+      "empty": "Nie wykryto action items.",
+      "owner": "Właściciel",
+      "due": "Termin",
+      "unassigned": "Nieprzypisane",
+      "priority": {
+        "low": "Niski",
+        "medium": "Średni",
+        "high": "Wysoki"
+      },
+      "source": "Pokaż w transkrypcji"
+    },
+    "decisions": {
+      "empty": "Nie wykryto decyzji.",
+      "source": "Pokaż w transkrypcji"
+    },
+    "transcript": {
+      "empty": "Transkrypcja nie jest jeszcze dostępna.",
+      "renameSpeaker": "Zmień nazwę mówcy",
+      "speakerName": "Wyświetlana nazwa",
+      "speakerHint": "Używana w notatkach, właścicielach zadań i eksporcie Markdown.",
+      "segments": "{{count}} segmentów"
+    },
+    "player": {
+      "unavailable": "Podgląd nagrania jest niedostępny."
+    }
+  }
+}

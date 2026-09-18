@@ -1,0 +1,15 @@
+api.meetnotes.localhost {
+	reverse_proxy localhost:3000
+}
+
+app.meetnotes.localhost {
+	reverse_proxy localhost:5173
+}
+
+mailbox.meetnotes.localhost {
+	reverse_proxy localhost:8025
+}
+
+storage.meetnotes.localhost {
+	reverse_proxy localhost:9001
+}

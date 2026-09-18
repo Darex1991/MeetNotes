@@ -1,0 +1,2578 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/v1/users/me": {
+      "get": {
+        "operationId": "UsersController_getProfile_v1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/v1/users/me/alert-email": {
+      "get": {
+        "operationId": "UsersController_scheduleAlertEmail_v1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/v1/users": {
+      "get": {
+        "operationId": "UsersController_getUsers_v1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUsersResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/v1/users/{id}": {
+      "get": {
+        "operationId": "UsersController_getUserById_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserByIdResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      },
+      "patch": {
+        "operationId": "UsersController_updateUser_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateUserResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      },
+      "delete": {
+        "operationId": "UsersController_deleteUser_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteUserResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/v1/users/{id}/image": {
+      "post": {
+        "operationId": "UsersController_uploadUserImage_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadUserImageResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/api/v1/meetings": {
+      "post": {
+        "operationId": "MeetingsController_createMeeting_v1",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMeetingBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateMeetingResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Meetings"
+        ]
+      },
+      "get": {
+        "operationId": "MeetingsController_listMeetings_v1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListMeetingsResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Meetings"
+        ]
+      }
+    },
+    "/api/v1/meetings/{id}": {
+      "get": {
+        "operationId": "MeetingsController_getMeeting_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMeetingResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Meetings"
+        ]
+      },
+      "patch": {
+        "operationId": "MeetingsController_updateMeeting_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMeetingBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateMeetingResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Meetings"
+        ]
+      },
+      "delete": {
+        "operationId": "MeetingsController_deleteMeeting_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteMeetingResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Meetings"
+        ]
+      }
+    },
+    "/api/v1/meetings/{id}/retry": {
+      "post": {
+        "operationId": "MeetingsController_retryMeeting_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetryMeetingResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Meetings"
+        ]
+      }
+    },
+    "/api/v1/meetings/{id}/media-url": {
+      "get": {
+        "operationId": "MeetingsController_getMediaUrl_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMediaUrlResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Meetings"
+        ]
+      }
+    },
+    "/api/v1/meetings/{id}/export": {
+      "get": {
+        "operationId": "MeetingsController_exportMeeting_v1",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Meeting notes as a Markdown document",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Meetings"
+        ]
+      }
+    },
+    "/api/v1/test-config/setup": {
+      "post": {
+        "operationId": "TestConfigController_setup_v1",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "TestConfig"
+        ]
+      }
+    },
+    "/api/v1/test-config/teardown": {
+      "post": {
+        "operationId": "TestConfigController_teardown_v1",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "TestConfig"
+        ]
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "HealthController_check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The Health Check is successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {},
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The Health Check is not successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        },
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Health"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Meeting Notes API",
+    "description": "Upload meeting recordings, process them in the background (Whisper transcription, diarization, Claude summaries) and read the resulting notes.",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "GetUsersResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "emailVerified": {
+                  "type": "boolean"
+                },
+                "image": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "createdAt": {
+                  "type": "Date"
+                },
+                "updatedAt": {
+                  "type": "Date"
+                },
+                "role": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "banned": {
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "banReason": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "banExpires": {
+                  "anyOf": [
+                    {
+                      "type": "Date"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "email",
+                "emailVerified",
+                "image",
+                "createdAt",
+                "updatedAt",
+                "role",
+                "banned",
+                "banReason",
+                "banExpires"
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "GetUserByIdResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "emailVerified": {
+                "type": "boolean"
+              },
+              "image": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "createdAt": {
+                "type": "Date"
+              },
+              "updatedAt": {
+                "type": "Date"
+              },
+              "role": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "banned": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "banReason": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "banExpires": {
+                "anyOf": [
+                  {
+                    "type": "Date"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "email",
+              "emailVerified",
+              "image",
+              "createdAt",
+              "updatedAt",
+              "role",
+              "banned",
+              "banReason",
+              "banExpires"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "UploadUserImageResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "emailVerified": {
+                "type": "boolean"
+              },
+              "image": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "createdAt": {
+                "type": "Date"
+              },
+              "updatedAt": {
+                "type": "Date"
+              },
+              "role": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "banned": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "banReason": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "banExpires": {
+                "anyOf": [
+                  {
+                    "type": "Date"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "email",
+              "emailVerified",
+              "image",
+              "createdAt",
+              "updatedAt",
+              "role",
+              "banned",
+              "banReason",
+              "banExpires"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "UpdateUserBody": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "format": "email",
+            "type": "string"
+          }
+        }
+      },
+      "UpdateUserResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "emailVerified": {
+                "type": "boolean"
+              },
+              "image": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "createdAt": {
+                "type": "Date"
+              },
+              "updatedAt": {
+                "type": "Date"
+              },
+              "role": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "banned": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "banReason": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "banExpires": {
+                "anyOf": [
+                  {
+                    "type": "Date"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "email",
+              "emailVerified",
+              "image",
+              "createdAt",
+              "updatedAt",
+              "role",
+              "banned",
+              "banReason",
+              "banExpires"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "DeleteUserResponse": {
+        "type": "null"
+      },
+      "CreateMeetingBody": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "format": "binary",
+            "description": "Audio or video recording (multipart/form-data field `file`).",
+            "type": "string"
+          },
+          "title": {
+            "minLength": 1,
+            "maxLength": 200,
+            "type": "string"
+          },
+          "language": {
+            "minLength": 2,
+            "maxLength": 5,
+            "description": "ISO-639-1 hint for Whisper, e.g. 'pl' or 'en'. Auto-detected when omitted.",
+            "type": "string"
+          }
+        }
+      },
+      "CreateMeetingResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "const": "uploaded",
+                    "type": "string"
+                  },
+                  {
+                    "const": "transcribing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "diarizing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "summarizing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "completed",
+                    "type": "string"
+                  },
+                  {
+                    "const": "failed",
+                    "type": "string"
+                  }
+                ]
+              },
+              "progress": {
+                "type": "integer"
+              },
+              "failedStage": {
+                "anyOf": [
+                  {
+                    "anyOf": [
+                      {
+                        "const": "transcribe",
+                        "type": "string"
+                      },
+                      {
+                        "const": "diarize",
+                        "type": "string"
+                      },
+                      {
+                        "const": "summarize",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "errorMessage": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "language": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "durationSeconds": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "fileName": {
+                "type": "string"
+              },
+              "mimeType": {
+                "type": "string"
+              },
+              "byteSize": {
+                "type": "number"
+              },
+              "actionItemsCount": {
+                "type": "integer"
+              },
+              "decisionsCount": {
+                "type": "integer"
+              },
+              "speakersCount": {
+                "type": "integer"
+              },
+              "processingStartedAt": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "completedAt": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "createdAt": {
+                "type": "string"
+              },
+              "updatedAt": {
+                "type": "string"
+              },
+              "transcript": {
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "start": {
+                          "type": "number"
+                        },
+                        "end": {
+                          "type": "number"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "speaker": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "start",
+                        "end",
+                        "text",
+                        "speaker"
+                      ]
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "speakers": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object",
+                "properties": {}
+              },
+              "summary": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "keyTopics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "actionItems": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "owner": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "dueDate": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "priority": {
+                      "anyOf": [
+                        {
+                          "const": "low",
+                          "type": "string"
+                        },
+                        {
+                          "const": "medium",
+                          "type": "string"
+                        },
+                        {
+                          "const": "high",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "sourceSegmentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "owner",
+                    "dueDate",
+                    "priority",
+                    "sourceSegmentIds"
+                  ]
+                }
+              },
+              "decisions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "rationale": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "sourceSegmentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "rationale",
+                    "sourceSegmentIds"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "status",
+              "progress",
+              "failedStage",
+              "errorMessage",
+              "language",
+              "durationSeconds",
+              "fileName",
+              "mimeType",
+              "byteSize",
+              "actionItemsCount",
+              "decisionsCount",
+              "speakersCount",
+              "processingStartedAt",
+              "completedAt",
+              "createdAt",
+              "updatedAt",
+              "transcript",
+              "speakers",
+              "summary",
+              "keyTopics",
+              "actionItems",
+              "decisions"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "ListMeetingsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "status": {
+                  "anyOf": [
+                    {
+                      "const": "uploaded",
+                      "type": "string"
+                    },
+                    {
+                      "const": "transcribing",
+                      "type": "string"
+                    },
+                    {
+                      "const": "diarizing",
+                      "type": "string"
+                    },
+                    {
+                      "const": "summarizing",
+                      "type": "string"
+                    },
+                    {
+                      "const": "completed",
+                      "type": "string"
+                    },
+                    {
+                      "const": "failed",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "progress": {
+                  "type": "integer"
+                },
+                "failedStage": {
+                  "anyOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "const": "transcribe",
+                          "type": "string"
+                        },
+                        {
+                          "const": "diarize",
+                          "type": "string"
+                        },
+                        {
+                          "const": "summarize",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "errorMessage": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "language": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "durationSeconds": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "fileName": {
+                  "type": "string"
+                },
+                "mimeType": {
+                  "type": "string"
+                },
+                "byteSize": {
+                  "type": "number"
+                },
+                "actionItemsCount": {
+                  "type": "integer"
+                },
+                "decisionsCount": {
+                  "type": "integer"
+                },
+                "speakersCount": {
+                  "type": "integer"
+                },
+                "processingStartedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "completedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "status",
+                "progress",
+                "failedStage",
+                "errorMessage",
+                "language",
+                "durationSeconds",
+                "fileName",
+                "mimeType",
+                "byteSize",
+                "actionItemsCount",
+                "decisionsCount",
+                "speakersCount",
+                "processingStartedAt",
+                "completedAt",
+                "createdAt",
+                "updatedAt"
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "GetMeetingResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "const": "uploaded",
+                    "type": "string"
+                  },
+                  {
+                    "const": "transcribing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "diarizing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "summarizing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "completed",
+                    "type": "string"
+                  },
+                  {
+                    "const": "failed",
+                    "type": "string"
+                  }
+                ]
+              },
+              "progress": {
+                "type": "integer"
+              },
+              "failedStage": {
+                "anyOf": [
+                  {
+                    "anyOf": [
+                      {
+                        "const": "transcribe",
+                        "type": "string"
+                      },
+                      {
+                        "const": "diarize",
+                        "type": "string"
+                      },
+                      {
+                        "const": "summarize",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "errorMessage": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "language": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "durationSeconds": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "fileName": {
+                "type": "string"
+              },
+              "mimeType": {
+                "type": "string"
+              },
+              "byteSize": {
+                "type": "number"
+              },
+              "actionItemsCount": {
+                "type": "integer"
+              },
+              "decisionsCount": {
+                "type": "integer"
+              },
+              "speakersCount": {
+                "type": "integer"
+              },
+              "processingStartedAt": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "completedAt": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "createdAt": {
+                "type": "string"
+              },
+              "updatedAt": {
+                "type": "string"
+              },
+              "transcript": {
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "start": {
+                          "type": "number"
+                        },
+                        "end": {
+                          "type": "number"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "speaker": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "start",
+                        "end",
+                        "text",
+                        "speaker"
+                      ]
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "speakers": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object",
+                "properties": {}
+              },
+              "summary": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "keyTopics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "actionItems": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "owner": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "dueDate": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "priority": {
+                      "anyOf": [
+                        {
+                          "const": "low",
+                          "type": "string"
+                        },
+                        {
+                          "const": "medium",
+                          "type": "string"
+                        },
+                        {
+                          "const": "high",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "sourceSegmentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "owner",
+                    "dueDate",
+                    "priority",
+                    "sourceSegmentIds"
+                  ]
+                }
+              },
+              "decisions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "rationale": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "sourceSegmentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "rationale",
+                    "sourceSegmentIds"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "status",
+              "progress",
+              "failedStage",
+              "errorMessage",
+              "language",
+              "durationSeconds",
+              "fileName",
+              "mimeType",
+              "byteSize",
+              "actionItemsCount",
+              "decisionsCount",
+              "speakersCount",
+              "processingStartedAt",
+              "completedAt",
+              "createdAt",
+              "updatedAt",
+              "transcript",
+              "speakers",
+              "summary",
+              "keyTopics",
+              "actionItems",
+              "decisions"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "UpdateMeetingBody": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "minLength": 1,
+            "maxLength": 200,
+            "type": "string"
+          },
+          "speakers": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "properties": {}
+          }
+        }
+      },
+      "UpdateMeetingResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "const": "uploaded",
+                    "type": "string"
+                  },
+                  {
+                    "const": "transcribing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "diarizing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "summarizing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "completed",
+                    "type": "string"
+                  },
+                  {
+                    "const": "failed",
+                    "type": "string"
+                  }
+                ]
+              },
+              "progress": {
+                "type": "integer"
+              },
+              "failedStage": {
+                "anyOf": [
+                  {
+                    "anyOf": [
+                      {
+                        "const": "transcribe",
+                        "type": "string"
+                      },
+                      {
+                        "const": "diarize",
+                        "type": "string"
+                      },
+                      {
+                        "const": "summarize",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "errorMessage": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "language": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "durationSeconds": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "fileName": {
+                "type": "string"
+              },
+              "mimeType": {
+                "type": "string"
+              },
+              "byteSize": {
+                "type": "number"
+              },
+              "actionItemsCount": {
+                "type": "integer"
+              },
+              "decisionsCount": {
+                "type": "integer"
+              },
+              "speakersCount": {
+                "type": "integer"
+              },
+              "processingStartedAt": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "completedAt": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "createdAt": {
+                "type": "string"
+              },
+              "updatedAt": {
+                "type": "string"
+              },
+              "transcript": {
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "start": {
+                          "type": "number"
+                        },
+                        "end": {
+                          "type": "number"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "speaker": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "start",
+                        "end",
+                        "text",
+                        "speaker"
+                      ]
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "speakers": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object",
+                "properties": {}
+              },
+              "summary": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "keyTopics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "actionItems": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "owner": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "dueDate": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "priority": {
+                      "anyOf": [
+                        {
+                          "const": "low",
+                          "type": "string"
+                        },
+                        {
+                          "const": "medium",
+                          "type": "string"
+                        },
+                        {
+                          "const": "high",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "sourceSegmentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "owner",
+                    "dueDate",
+                    "priority",
+                    "sourceSegmentIds"
+                  ]
+                }
+              },
+              "decisions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "rationale": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "sourceSegmentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "rationale",
+                    "sourceSegmentIds"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "status",
+              "progress",
+              "failedStage",
+              "errorMessage",
+              "language",
+              "durationSeconds",
+              "fileName",
+              "mimeType",
+              "byteSize",
+              "actionItemsCount",
+              "decisionsCount",
+              "speakersCount",
+              "processingStartedAt",
+              "completedAt",
+              "createdAt",
+              "updatedAt",
+              "transcript",
+              "speakers",
+              "summary",
+              "keyTopics",
+              "actionItems",
+              "decisions"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "RetryMeetingResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "const": "uploaded",
+                    "type": "string"
+                  },
+                  {
+                    "const": "transcribing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "diarizing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "summarizing",
+                    "type": "string"
+                  },
+                  {
+                    "const": "completed",
+                    "type": "string"
+                  },
+                  {
+                    "const": "failed",
+                    "type": "string"
+                  }
+                ]
+              },
+              "progress": {
+                "type": "integer"
+              },
+              "failedStage": {
+                "anyOf": [
+                  {
+                    "anyOf": [
+                      {
+                        "const": "transcribe",
+                        "type": "string"
+                      },
+                      {
+                        "const": "diarize",
+                        "type": "string"
+                      },
+                      {
+                        "const": "summarize",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "errorMessage": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "language": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "durationSeconds": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "fileName": {
+                "type": "string"
+              },
+              "mimeType": {
+                "type": "string"
+              },
+              "byteSize": {
+                "type": "number"
+              },
+              "actionItemsCount": {
+                "type": "integer"
+              },
+              "decisionsCount": {
+                "type": "integer"
+              },
+              "speakersCount": {
+                "type": "integer"
+              },
+              "processingStartedAt": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "completedAt": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "createdAt": {
+                "type": "string"
+              },
+              "updatedAt": {
+                "type": "string"
+              },
+              "transcript": {
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "start": {
+                          "type": "number"
+                        },
+                        "end": {
+                          "type": "number"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "speaker": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "start",
+                        "end",
+                        "text",
+                        "speaker"
+                      ]
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "speakers": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object",
+                "properties": {}
+              },
+              "summary": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "keyTopics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "actionItems": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "owner": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "dueDate": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "priority": {
+                      "anyOf": [
+                        {
+                          "const": "low",
+                          "type": "string"
+                        },
+                        {
+                          "const": "medium",
+                          "type": "string"
+                        },
+                        {
+                          "const": "high",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "sourceSegmentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "owner",
+                    "dueDate",
+                    "priority",
+                    "sourceSegmentIds"
+                  ]
+                }
+              },
+              "decisions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "rationale": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "sourceSegmentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "rationale",
+                    "sourceSegmentIds"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "status",
+              "progress",
+              "failedStage",
+              "errorMessage",
+              "language",
+              "durationSeconds",
+              "fileName",
+              "mimeType",
+              "byteSize",
+              "actionItemsCount",
+              "decisionsCount",
+              "speakersCount",
+              "processingStartedAt",
+              "completedAt",
+              "createdAt",
+              "updatedAt",
+              "transcript",
+              "speakers",
+              "summary",
+              "keyTopics",
+              "actionItems",
+              "decisions"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "GetMediaUrlResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "expiresAt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "url",
+              "expiresAt"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "DeleteMeetingResponse": {
+        "type": "null"
+      }
+    }
+  }
+}
